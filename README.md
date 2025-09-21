@@ -13,7 +13,7 @@ this stack(sanity) allows to manage data to our content such as portofolio inste
 
 ## AI support
 
-this front end development assisted with many AI included granite from IBM playground.
+this semi backend end development assisted with many AI included granite from IBM playground.
 
 ## Pre-requisites
 
