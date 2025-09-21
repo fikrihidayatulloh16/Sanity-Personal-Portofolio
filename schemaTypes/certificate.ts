@@ -47,6 +47,15 @@ export default defineType({
             description: 'Certificate File',
             type: 'file'
         }),
-
+        
+        defineField({
+            name: 'previewImage',
+            title: 'Preview Image',
+            description: 'Upload a screenshot or cover image for this certificate.',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
+        }),
     ]
 })

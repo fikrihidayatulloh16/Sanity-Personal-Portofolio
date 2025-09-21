@@ -16,9 +16,16 @@ export default defineType({
         }),
         
         defineField({
-            name : 'slug',
-            title : 'Slug',
-            type : 'slug'
+        name: 'slug',
+        title: 'Slug',
+        type: 'slug',
+        options: {
+            source: 'title',
+            maxLength: 96,
+            // Use the defaultIsUnique helper function
+            isUnique: (value, context) => context.defaultIsUnique(value, context),
+        },
+        validation: (Rule) => Rule.required(), // It's also good practice to make the slug required
         }),
         
         defineField({
@@ -79,7 +86,10 @@ export default defineType({
             name : 'descriptions',
             title : 'Description',
             description : 'Project Description',
-            type : 'text'
+            type : 'array',
+            of: [
+                {type: 'block'}
+            ]
         }),
         
         defineField({
