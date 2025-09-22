@@ -69,10 +69,12 @@ export default defineType({
             description : 'Add all other images for the project detail page here.',
             type : 'array',
             of : [{
-                type: 'image', // The array can contain images
-                options: {
-                    hotspot: true, // This allows for better image cropping
-                },
+                title: 'Image Gallery',
+                type: 'object', // The array can contain images
+                fields: [
+                    {name: 'alt', title: 'Alt/teks galery', type: 'string'},
+                    {name: 'projectgallery', title: 'Project Gallery', type: 'image', options: {hotspot: true}}
+                ]
             }]
         }),
         
@@ -97,10 +99,24 @@ export default defineType({
             title: 'Technologies',
             type: 'array',
             of: [{
-                type: 'reference', 
-                to: [{type: 'skill'}]
-            }]
+                title : 'Technologies',
+                type: 'object', 
+                fields: [
+                    {name: 'tech', title: 'Technology used', type: 'reference', to: [{type: 'skill'}]},
+                    {name: 'techDescription', title: 'Technology Description', type: 'string',}
+                ]}
+            ]
+                
 
+        }),
+
+        defineField({
+            name : 'feature',
+            title: 'Project Feature',
+            type: 'array',
+            of: [
+                {type : 'block'},
+            ]
         }),
         
         defineField({
