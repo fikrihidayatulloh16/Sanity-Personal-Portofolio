@@ -114,8 +114,12 @@ export default defineType({
             name : 'feature',
             title: 'Project Feature',
             type: 'array',
-            of: [
-                {type : 'block'},
+            of: [{
+                title : 'feature',
+                type: 'object', 
+                fields: [
+                    {name: 'featureName', title: 'Feature Name', type: 'string'}
+                ]}
             ]
         }),
         
